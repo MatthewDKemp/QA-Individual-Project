@@ -1,0 +1,1 @@
+Individual project to demonstrate learning during first 6 weeks of QA academy
