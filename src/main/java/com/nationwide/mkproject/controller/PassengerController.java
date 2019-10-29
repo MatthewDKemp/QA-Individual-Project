@@ -1,36 +1,35 @@
 package com.nationwide.mkproject.controller;
 
-import java.util.ArrayList;
 import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.crossstore.ChangeSetPersister.NotFoundException;
 import org.springframework.web.bind.annotation.*;
-import com.nationwide.mkproject.entity.Passenger;
+import com.nationwide.mkproject.entity.Passengers;
 import com.nationwide.mkproject.service.PassengerService;
 
 @RestController
-@RequestMapping("/passengers")
+@CrossOrigin("*")
 public class PassengerController {
 	
 	@Autowired
 	private PassengerService passengerService;
 	
-	@GetMapping("/passengers")
-	public List<Passenger> getAllPassengers(){
+	@GetMapping("/passenger")
+	public List<Passengers> getAllPassengers(){
 		return passengerService.getAllPassengers();
 	}
 	
-	@PostMapping("/passengers")
-	public Passenger addNewPassenger(@RequestBody Passenger passenger) {
+	@PostMapping("/passenger")
+	public Passengers addNewPassenger(@RequestBody Passengers passenger) {
 		return passengerService.addNewPassenger(passenger);
 	}
 	
-	@PutMapping("/passengers")
-	public Passenger updatePassenger(@RequestBody Passenger passenger) {
+	@PutMapping("/passenger")
+	public Passengers updatePassenger(@RequestBody Passengers passenger) throws NotFoundException {
 		return passengerService.updatePassenger(passenger);
 	}
 	
-	@DeleteMapping("/passengers/{id}")
+	@DeleteMapping("/passenger/{id}")
 	public String deletePassenger(@PathVariable(value = "id") int id) {
 		return passengerService.deletePassenger(id);
 	}
