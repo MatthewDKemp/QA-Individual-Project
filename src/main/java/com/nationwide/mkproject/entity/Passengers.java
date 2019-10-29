@@ -1,21 +1,23 @@
 package com.nationwide.mkproject.entity;
 
-import java.sql.*;
+import java.sql.Date;
+
 import javax.persistence.*;
 
 @Entity
-public class Passenger {
+@Table(name = "Passengers")
+public class Passengers {
 	
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int Id;
 	private String Fname;
 	private String Lname;
-	private Date Dob;
+    private Date Dob;
 	private String Email;
 	private String Phone;
 	
-	public Passenger() {
+	public Passengers() {
 		
 	}
 
