@@ -2,7 +2,6 @@ package com.nationwide.mkproject.controller;
 
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.crossstore.ChangeSetPersister.NotFoundException;
 import org.springframework.web.bind.annotation.*;
 import com.nationwide.mkproject.entity.Passengers;
 import com.nationwide.mkproject.service.PassengerService;
@@ -25,7 +24,7 @@ public class PassengerController {
 	}
 	
 	@PutMapping("/passenger")
-	public Passengers updatePassenger(@RequestBody Passengers passenger) throws NotFoundException {
+	public Passengers updatePassenger(@RequestBody Passengers passenger) {
 		return passengerService.updatePassenger(passenger);
 	}
 	

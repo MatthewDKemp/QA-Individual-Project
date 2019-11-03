@@ -1,8 +1,11 @@
 package com.nationwide.mkproject.entity;
 
-import java.sql.Date;
 
+
+import java.util.Date;
 import javax.persistence.*;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 @Entity
 @Table(name = "Passengers")
@@ -10,63 +13,66 @@ public class Passengers {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private int Id;
-	private String Fname;
-	private String Lname;
-    private Date Dob;
-	private String Email;
-	private String Phone;
+	private int id;
+	private String fname;
+	private String lname;
+	@JsonFormat(pattern="yyyy-MM-dd")
+    private Date  dob;
+	private String email;
+	private String phone;
 	
 	public Passengers() {
 		
 	}
 
 	public int getId() {
-		return Id;
+		return id;
 	}
 
 	public void setId(int id) {
-		Id = id;
+		this.id = id;
 	}
 
 	public String getFname() {
-		return Fname;
+		return fname;
 	}
 
 	public void setFname(String fname) {
-		Fname = fname;
+		this.fname = fname;
 	}
 
 	public String getLname() {
-		return Lname;
+		return lname;
 	}
 
 	public void setLname(String lname) {
-		Lname = lname;
+		this.lname = lname;
 	}
 
 	public Date getDob() {
-		return Dob;
+		return dob;
 	}
 
 	public void setDob(Date dob) {
-		Dob = dob;
+		this.dob = dob;
 	}
 
 	public String getEmail() {
-		return Email;
+		return email;
 	}
 
 	public void setEmail(String email) {
-		Email = email;
+		this.email = email;
 	}
 
 	public String getPhone() {
-		return Phone;
+		return phone;
 	}
 
 	public void setPhone(String phone) {
-		Phone = phone;
+		this.phone = phone;
 	}
+
+	
 	
 }
