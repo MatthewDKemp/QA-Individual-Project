@@ -21,7 +21,7 @@ public class PassengerService {
 	}
 
 	public Passengers updatePassenger(Passengers passenger) {
-		return repository.save(passenger);
+		return repository.saveAndFlush(passenger);
 	}
 
 	public String deletePassenger(int passengerId) {
